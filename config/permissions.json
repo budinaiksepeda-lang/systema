@@ -1,0 +1,30 @@
+#permissions.json
+{
+    "admin": {
+        "can_void": true,
+        "can_edit_price": true,
+        "can_view_reports": true,
+        "can_manage_users": true,
+        "can_manage_inventory": true,
+        "max_discount_percentage": 50,
+        "requires_approval_for": []
+    },
+    "manager": {
+        "can_void": true,
+        "can_edit_price": true,
+        "can_view_reports": true,
+        "can_manage_users": false,
+        "can_manage_inventory": true,
+        "max_discount_percentage": 30,
+        "requires_approval_for": ["void_above_500000"]
+    },
+    "cashier": {
+        "can_void": false,
+        "can_edit_price": false,
+        "can_view_reports": false,
+        "can_manage_users": false,
+        "can_manage_inventory": false,
+        "max_discount_percentage": 10,
+        "requires_approval_for": ["discount_above_10", "refund"]
+    }
+}
